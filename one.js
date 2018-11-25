@@ -25,12 +25,12 @@ function startProgram() {
     // to show how we can manipulate the DOM, grab the span we made
     // and change its text
     // note that we're using innerText here - we could use innerHTML
-    let s1 = document.getElementById("span1");
-    s1.innerText = "This text was changed by Javascript.";
+    let span1 = document.getElementById("span1");
+    span1.innerText = "This text was changed by Javascript.";
 
     // we can also change style aspects of DOM things
-    s1.style["backgroundColor"] = "#CEE";   // CEE = light cyan
-    s1.style["color"] = "#008";             // 008 = mid blue  
+    span1.style["backgroundColor"] = "#CEE";   // CEE = light cyan
+    span1.style["color"] = "#008";             // 008 = mid blue  
 
     // note that if we change aspects of the parent of the element,
     // the child elements have priority
@@ -134,12 +134,33 @@ function startProgram() {
     }
 
     // here, we make a button programmatically
-    let s7 = document.getElementById("span7")
+    let span7 = document.getElementById("span7")
     let b7 = document.createElement("button"); 
     b7.innerText = "Button 7"
-    s7.appendChild(b7);
+    span7.appendChild(b7);
     b7.onclick = function() {
         let b7s = document.getElementById("b7s");
         b7s.innerText = "Button 7 was pressed."
     }
+
+    // the slider demo
+    let slider2 = document.getElementById("sl2");
+    let sl2a = document.getElementById("sl2a");
+    let sl2b = document.getElementById("sl2b");
+    let sl2c = document.getElementById("sl2c");
+    let sl2d = document.getElementById("sl2d");
+
+    slider2.onchange = function() {
+        sl2a.innerText = "Slider Change to " + slider2.value;
+    }
+    slider2.onclick = function() {
+        sl2b.innerText = "Slider Click at " + slider2.value;
+    }
+    slider2.onmousedown = function() {
+        sl2c.innerText = "Slider Mousedown at " + slider2.value;
+    }
+    slider2.oninput = function() {
+        sl2d.innerText = "Slider Mousedown at " + slider2.value;
+    }
+
 }

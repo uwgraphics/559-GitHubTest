@@ -15,6 +15,7 @@
         (or maybe an entire framework like Bootstrap) to make things look nice.
     </p>
 
+    <h2>Some Divs and Paragraphs</h2>
     <div id="div1">
         <p>
             This is a first example where we have an ID to change.
@@ -32,6 +33,7 @@
         </p>
     </div>
 
+    <h2>Buttons</h2>
     <div id="div3" style="width:500px; border-style: solid">
         <p>
             This div will actually have some action - we'll make
@@ -109,7 +111,7 @@
         <p><span id="b6s">No button pressed.</span></p>
     </div>
     
-    <div id="div6" style="width:500px; border-style: solid">
+    <div id="div7" style="width:500px; border-style: solid">
         <p>
             Here, we'll let Javascript make the buttons!
         </p>
@@ -119,7 +121,37 @@
         <p>
             <span id="b7s">Some text for the button to change.</span>
         </p>
-    </div>       
+    </div>      
+    
+    <h3>Sliders</h3>
+    <div id="ds1" style="width:500px; border-style: solid">
+        <p>
+            Everything that we did for buttons also works for sliders.
+        </p>
+        <p>
+            <input type="range" min="0" max="100" id="sl1">
+        </p>
+        <p>
+            The default sliders are pretty ugly. And they don't do anything without
+            JavaScript.
+        </p>
+    </div>
+
+    <div id="ds2" style="width:500px; border-style: solid">
+        <p>
+            Sliders generate events too. The most interesting one is change.
+        </p>
+        <p>
+            <input type="range" min="0" max="100" id="sl2">
+        </p>
+        <p>
+            <span id="sl2a">Slider hasn't changed</span><br/>
+            <span id="sl2b">Slider hasn't clicked</span><br/>
+            <span id="sl2c">Slider hasn't mousedown</span><br/>
+            <span id="sl2d">Slider hasn't input</span><br/>
+        </p>
+    </div>
+    
 </body>
 
 <script src="one.js"></script>
