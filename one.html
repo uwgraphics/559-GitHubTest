@@ -1,0 +1,126 @@
+<html>
+<header>
+
+</header>
+
+<body>
+    <p>
+        This is the text of the first example for the 2019 example code.
+        It's just a silly HTML file that has some HTML in it so we can do stuff
+        to it.
+    </p>
+    <p>
+        This file is also a reminder of how <b>ugly</b> unstyled HTML is!
+        In a real application, we would use a style sheet
+        (or maybe an entire framework like Bootstrap) to make things look nice.
+    </p>
+
+    <div id="div1">
+        <p>
+            This is a first example where we have an ID to change.
+            <span id="span1">This text will be changed.</span>
+            <span id="span2">This text will come from HTML.</span>
+        </p>
+    </div>
+
+    <div id="div2"style="width:300px; border-style: solid">
+        <p>
+            This is a second paragraph. 
+            It will have some more text so that we can experiment.
+            But not too much, since it's just a silly example.
+            It's mainly here so I can style the DIV element.
+        </p>
+    </div>
+
+    <div id="div3" style="width:500px; border-style: solid">
+        <p>
+            This div will actually have some action - we'll make
+            a button!
+        </p>
+        <p>
+            <button id="button1">Button 1</button> The button is inside a paragraph!
+        </p>
+        <p>
+            The button by itself is pretty ugly. In a real program, we should style it
+            and try to make a nice layout.
+        </p>
+        <p>
+            By itself the button does nothing. This button has no Javascript with it.
+        </p>
+    </div>
+    <div id="div4" style="width:500px; border-style: solid">
+            <p>
+                Another ugly button.
+            </p>
+            <p>
+                <button id="button2">Button 2</button> The button is inside a paragraph!
+            </p>
+            <p>
+                We'll have Javascript find this button and make it do something.
+                <span id="button2span">It hasn't yet.</span>
+            </p>
+    </div>
+    <div id="div4" style="width:500px; border-style: solid">
+            <p>
+                Last time, we used onclick, which responded to the "click" event.
+                This time, we'll be pickier - and try to observe when the mouse 
+                goes down and up.
+            </p>
+            <p>
+                <button id="button3">Button 3</button> The button is inside a paragraph!
+            </p>
+            <p>
+                <span id="button3span">The button hasn't been pressed.</span>
+            </p>
+            <p>
+                The broken button behavior is part of clicking. If you move outside
+                of a button, the mouseup event goes elsewhere. If you use onclick rather
+                than onmouseup, you only get the up event if you got the down event.
+            </p>
+            <p>
+                <button id="button4">Button 4</button> The button is inside a paragraph!
+            </p>
+            <p>
+                <span id="button4span">The button hasn't been pressed.</span>
+            </p>
+    </div>
+    <div id="div5" style="width:500px; border-style: solid">
+        <p>
+            Here will will show the difference between onclick and onmouseup. 
+            Try clicking in each button and then moving outside. 
+            Then try clicking outside the button and moving in. 
+            Try clicking in one button and releasing in the other.
+        </p>
+        <p>
+            <button id="button5mu">Mouse Up</button>
+            <button id="button5oc">On Click</button>
+        </p>
+        <p><span id="b5s">No button pressed.</span></p>
+    </div>
+    <div id="div6" style="width:500px; border-style: solid">
+        <p>
+            We can get fancier by keeping track of mouse enter and
+            exit events. Here, I'll check for the mouse leaving
+            (but not re-entering).
+        </p>
+        <p>
+            <button id="b6">Button 6</button>
+        </p>
+        <p><span id="b6s">No button pressed.</span></p>
+    </div>
+    
+    <div id="div6" style="width:500px; border-style: solid">
+        <p>
+            Here, we'll let Javascript make the buttons!
+        </p>
+        <p>
+            <span id="span7"></span>
+        </p>
+        <p>
+            <span id="b7s">Some text for the button to change.</span>
+        </p>
+    </div>       
+</body>
+
+<script src="one.js"></script>
+</html>
