@@ -123,7 +123,7 @@
         </p>
     </div>      
     
-    <h3>Sliders</h3>
+    <h2>Sliders</h2>
     <div id="ds1" style="width:500px; border-style: solid">
         <p>
             Everything that we did for buttons also works for sliders.
@@ -151,7 +151,71 @@
             <span id="sl2d">Slider hasn't input</span><br/>
         </p>
     </div>
-    
+
+    <div id="ds3" style="width:500px; border-style: solid">
+        <p>
+            Sliders both send and receive events. 
+            The first slider is tied to the second and third. 
+            Note how if you change one of the latter sliders,
+            they get changed back when the first moves.
+        </p>
+        <p>
+            <input type="range" min="0" max="100" id="sl3">
+            <input type="range" min="0" max="100" id="sl3a">
+            <input type="range" min="0" max="100" id="sl3b">
+        </p>
+        <p>
+            <span id="sl3s">Slider hasn't changed</span><br/>
+        </p>
+    </div>
+       
+    <h2>Request Animation Frame</h2>
+    <div id="rf1" style="width:500px; border-style: solid">
+        <p>
+            RequestAnimationFrame requests an "event" for the next
+            screen redraw - it's basically saying "call me in 16ms"
+            (16 milliseconds is the time to make 60hz).
+        </p>
+        <p>
+            This is now. 
+            <span id="rs1">This will be changed in the future.</span>
+            You probably never saw that change (since it happened a few ms)
+            after the document finished loading.
+        </p>
+        <p>Here we'll chain two of them. <span id="rs2"></span></p>
+
+    </div>
+
+    <div id="rf1" style="width:500px; border-style: solid">
+        <p>
+            The typical usage is that we create a "loop" by
+            having the event handler schedule itself to 
+            be called in the future. Here, the event handler
+            moves the slider forward one tick, and then
+            schedules itself for the future.
+        </p>
+        <p>
+            <input type="range" min="0" max="100" id="slr1">
+        </p>
+    </div>
+
+    <div id="rf1" style="width:500px; border-style: solid">
+            <p>
+                Here is another typical example. 
+                Notice how the first slider doesn't need
+                to ever create an event. When the second slider
+                is updated, it polls the first (looks at its value)
+            </p>
+            <p>
+                Change the first slider to affect how the second one moves.
+            </p>
+            <p>
+                <input type="range" min="-10" max="10" value="1" id="slr2">
+                <input type="range" min="0" max="100" id="slr2b">
+            </p>
+        </div>
+        
+        
 </body>
 
 <script src="one.js"></script>

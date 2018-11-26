@@ -22,6 +22,13 @@ function startProgram() {
     // let everyone know we're here
     console.log("Program Started");
 
+    // the pattern will be:
+    // find an element in the DOM
+    //  I will use getElementById - since I made the web page,
+    //      I know that the Ids are unique
+    //  I could have used querySelector (or querySelectorAll)
+    //      that would let me pick things out by other attributes
+
     // to show how we can manipulate the DOM, grab the span we made
     // and change its text
     // note that we're using innerText here - we could use innerHTML
@@ -40,6 +47,10 @@ function startProgram() {
     // document.getElementById("div1").style["color"] = "#800";
     // this is equivalent, but harder to debug - if an error
     // occurs, it will be on a specific line
+
+
+    /////////////////////////////////////////////////////////
+    // Button Examples
 
     // let's try to do something with the button
     let b2 = document.getElementById("button2");
@@ -143,7 +154,11 @@ function startProgram() {
         b7s.innerText = "Button 7 was pressed."
     }
 
+    /////////////////////////////////////////////////////////
+    // Slider Demos
+
     // the slider demo
+    // make a slider and try out some different events
     let slider2 = document.getElementById("sl2");
     let sl2a = document.getElementById("sl2a");
     let sl2b = document.getElementById("sl2b");
@@ -160,7 +175,99 @@ function startProgram() {
         sl2c.innerText = "Slider Mousedown at " + slider2.value;
     }
     slider2.oninput = function() {
-        sl2d.innerText = "Slider Mousedown at " + slider2.value;
+        sl2d.innerText = "Slider OnInput at " + slider2.value;
     }
 
+
+    // the second slider demo - #1 tied to number 2 and 3
+    let slider3 = document.getElementById("sl3");
+    let slider3a = document.getElementById("sl3a");
+    let slider3b = document.getElementById("sl3b");
+    let sp3 = document.getElementById("sl3s")
+
+    slider3.oninput = function() {
+        slider3a.value = slider3.value;
+    }
+    slider3.onchange = function() {
+        slider3b.value = slider3.value;
+    }
+    slider3.onmousedown = function() {
+        sp3.innerText = "Slider 3 being dragged";
+    }
+    // use chaining to set both of these
+    slider3a.onmousedown = slider3b.onmousedown = function() {
+        sp3.innerText = "Slider not connected to anything";
+    }
+
+
+    /////////////////////////////////////////////////////////
+    // requestAnimationFrame examples
+    
+    // use request animation frame to do something 16ms
+    // in the future - this kindof one off usage is a little
+    // weird
+    let timestamp = performance.now()
+    window.requestAnimationFrame(function() {
+        let span = document.getElementById("rs1");
+        rs1.innerText = "Hello from "+(performance.now()-timestamp)+" in the future";
+    });
+
+    let rs2 = document.getElementById("rs2");
+    window.requestAnimationFrame(function() {
+        // this is the function for the first request
+        rs2.innerText = "Hello from First. ";
+        // remember when this happened
+        let ts1 = performance.now();
+        // now queue up the second one, even farther in the future
+        window.requestAnimationFrame(function() {
+            // this is the function forthe second request
+            // not that I am adding to innertext
+            let now = performance.now();
+            // remember that we can see the variable ts1 from the outer
+            // function (thanks to closure!)
+            rs2.innerText += " Hello from Second "+(now-ts1)+" ms after First.";
+        });
+    })
+
+    // a more typical usage of request animation frame
+    // a function schedules itself to be called in order to
+    // make a loop
+    let slr1 = document.getElementById("slr1");
+    function advanceSLR1() {
+        // add 1, roll over to zero if we hit the max
+        // note that the value of the slider is a string,
+        // so we have to convert it to a number
+        // The more obvious 1+"1" = "11" - thanks to JavaScripts
+        // aggressive coercion rules
+        let newValue = (Number(slr1.value)+1) % 100;
+        slr1.value = newValue;
+        // ask for this to be called again 16ms in the future
+        window.requestAnimationFrame(advanceSLR1);
+    }
+    // note that just defined the function, now we need to call it
+    // to start the loop
+    advanceSLR1();
+
+    // this example is really similar to the first - notice how
+    // both sliders can work, even though neither generates
+    // any events. everything happens by "polling."
+    let slr2 = document.getElementById("slr2");
+    let slr2b = document.getElementById("slr2b");
+    function advanceSLR2() {
+        // add speed, roll over to zero if we hit the max
+        // note that the value of the slider is a string,
+        // so we have to convert it to a number
+        // The more obvious 1+"1" = "11" - thanks to JavaScripts
+        // aggressive coercion rules
+        let speed = Number(slr2.value);
+        let newValue = (Number(slr2b.value)+speed) % 100;
+        if (newValue<0) newValue=100;
+        slr2b.value = newValue;
+        // ask for this to be called again 16ms in the future
+        window.requestAnimationFrame(advanceSLR2);
+    }
+    // note that just defined the function, now we need to call it
+    // to start the loop
+    advanceSLR2();
 }
+
