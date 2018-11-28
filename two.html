@@ -1,0 +1,37 @@
+<html>
+    <header>
+    </header>
+
+    <body>
+        <h1>
+            A Tale of Two APIs
+        </h1>
+
+        <p>
+        In this example, I will try to show the difference between two 
+        very different APIs.
+        </p>
+        <p> 
+            As far as the HTML is concerned, or even what you see, things should
+            be very similar. But under the hood, they work in very different ways.
+        </p>
+        <div>
+            <h3>Canvas </h3>
+            <canvas id="canvas1" width="400px" height="200px" style="border:1px solid #000"></canvas>
+            <p>
+                The rectangular region is for Canvas. 
+                I'll write to it with an immediate mode API (HTML Canvas)
+            </p>
+        </div>
+        <div>
+                <h3>SVG </h3>
+                <svg id="svg1" width="400px" height="200px" style="border:1px solid #000"></svg>
+                <p>
+                    The rectangular region is for mySVG. 
+                    I'll write to it by manipulating DOM objects inside of it.
+                </p>
+            </div>
+        </body>
+
+        <script src="two.js"></script>
+</html>
