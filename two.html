@@ -1,5 +1,7 @@
 <html>
     <header>
+        <!-- We will use a style sheet -->
+        <link rel="stylesheet" href="style559.css">
     </header>
 
     <body>
@@ -7,31 +9,81 @@
             A Tale of Two APIs
         </h1>
 
-        <p>
-        In this example, I will try to show the difference between two 
-        very different APIs.
-        </p>
-        <p> 
-            As far as the HTML is concerned, or even what you see, things should
-            be very similar. But under the hood, they work in very different ways.
-        </p>
-        <div>
-            <h3>Canvas </h3>
-            <canvas id="canvas1" width="400px" height="200px" style="border:1px solid #000"></canvas>
+
+
+        <div class="examplebox">
             <p>
-                The rectangular region is for Canvas. 
-                I'll write to it with an immediate mode API (HTML Canvas)
+                In this example, I will try to show the difference between two 
+                very different APIs.
+            </p>
+            <p> 
+                As far as the HTML is concerned, or even what you see, things should
+                be very similar. But under the hood, they work in very different ways.
+            </p>
+           <canvas id="canvas1" width="250px" height="200px" style="border:1px solid #000"></canvas>
+           <svg id="svg1" width="250px" height="200px" style="border:1px solid #000"></svg>
+           <p>
+                Go look at the Javascript. 
+                You'll see that the left box is written using 
+                an immediate mode API (HTML Canvas).
+                On the right, the box is made using SVG, which requires creating
+                DOM elements for the graphic elements (here a square).
             </p>
         </div>
-        <div>
-                <h3>SVG </h3>
-                <svg id="svg1" width="400px" height="200px" style="border:1px solid #000"></svg>
-                <p>
-                    The rectangular region is for mySVG. 
-                    I'll write to it by manipulating DOM objects inside of it.
-                </p>
-            </div>
-        </body>
+
+        <div class="examplebox">
+            <p>
+                The differences will be more clear when we make
+                the squares move. The visual appearance is the same,
+                but the code is quite different.
+            </p>
+            <canvas id="canvas2" width="250px" height="200px" style="border:1px solid #000"></canvas>
+            <svg id="svg2" width="250px" height="200px" style="border:1px solid #000"></svg>
+            <p>
+                These may look the same. But look at the Javascript.
+                On the left, we use Canvas - an immediate mode API.
+                We animate by redrawing.
+                On the right, we use SVG where the square is an actual
+                persistent object that is stored in the browser.
+                We animate it by moving the square.
+            </p>
+        </div>
+
+        <div class="examplebox">
+            <p>
+                The Canvas route has the advantage that it is simpler
+                and faster (it doesn't have to create DOM elements for each thing).
+                But SVG has other upsides. These boxes are created
+                just in the HTML file - since I can create the DOM elements that way.
+                The second one makes use of the style sheet that defines a class.
+                Be sure to look at this html file to see what is happening.
+                You will also need to look at the CSS style sheet.
+            </p>
+            <svg width="250px" height="200px" style="border:1px solid #000">
+                <rect x="50" y="50" width="50" height="50" fill="#000"></rect>
+            </svg>
+            <svg width="250px" height="200px" style="border:1px solid #000">
+                <rect x="50" y="50" width="50" height="50" class="lightbluewithborder"></rect>
+            </svg>
+    </div>
+
+    <div class="examplebox">
+        <p>
+            Of course, we can access these SVG graphic elements like any
+            other DOM element from javascript. 
+            On the left, we change the position (as we did in earlier examples).
+            On the right, we give the squares mouse handling functions. 
+            Try moving your mouse over the squares.
+        </p>
+        <svg width="250px" height="200px" style="border:1px solid #000">
+            <rect id="svgrect1" x="50" y="50" width="50" height="50" class="lightbluewithborder"></rect>
+        </svg>
+        <svg width="250px" height="200px" style="border:1px solid #000">
+                <rect id="svgrect2" x="50" y="50" width="50" height="50" fill="#000"></rect>
+                <rect id="svgrect3" x="150" y="50" width="50" height="50" class="lightbluewithborder"></rect>
+            </svg>
+        </div>
 
         <script src="two.js"></script>
+    </body>
 </html>

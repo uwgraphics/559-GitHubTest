@@ -1,0 +1,22 @@
+/*** Style Sheet for the 559 Tutorials ***/
+.examplebox {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    margin: 5px 5px 5px 15px; 
+    width: 600px;
+}
+
+/*** Simple SVG styles for testing ***/
+.lightbluewithborder {
+    fill: #CCF;
+    stroke: #00F;
+    stroke-width: 4px;
+}
+
+.lightredwithborder {
+    fill: #FCC;
+    stroke: #F00;
+    stroke-width: 2px;
+};
+
