@@ -2,6 +2,12 @@
 // if we include another file
 // "use strict";
 
+// Mike's first attempt at using an ES6 module
+'esversion:6';
+
+// test that import works
+import * as mymodule from "mymodule.js";
+
 // just to let you know we were here...
 console.log("File One is being loaded");
 
