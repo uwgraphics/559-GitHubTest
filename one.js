@@ -5,8 +5,10 @@
 // Mike's first attempt at using an ES6 module
 'esversion:6';
 
+console.log("Before the mymodule import!")
+
 // test that import works
-import * as mymodule from "mymodule.js";
+import * as mymodule from "./mymodule.js";
 
 // just to let you know we were here...
 console.log("File One is being loaded");
