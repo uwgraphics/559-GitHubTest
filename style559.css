@@ -1,13 +1,21 @@
 /*** Style Sheet for the 559 Tutorials ***/
+
+/** overall, use sans-serif fonts since they look nicer */
+body {
+    font-family: Calibri, Helvetica, sans-serif;
+}
+
+/** try to make things decently responsive - without using any magic! */
 :root{
     --boxwidth:600px;
 }
-
 @media all and (maxwidth: 600px) {
     :root{
         --boxwidth:100%;
     }
-} 
+}
+
+/** put each example into a box */
 .examplebox {
     border: 2px solid black;
     border-radius: 10px;
