@@ -1,9 +1,15 @@
 // note that we don't do a global "use strict" because this can create a problem
 // if we include another file
 // "use strict";
+
+// we do enable typescript type checking - see
+// http://graphics.cs.wisc.edu/WP/cs559-sp2019/typed-js/
+// and
+// https://github.com/Microsoft/TypeScript/wiki/Type-Checking-JavaScript-Files
 // @ts-check
 
-/* disable the warning about using bracket rather than dot
+/* Set options for jshint (my preferred linter)
+ * disable the warning about using bracket rather than dot
  * even though dot is better 
  * https://stackoverflow.com/questions/13192466/how-to-suppress-variable-is-better-written-in-dot-notation
  */

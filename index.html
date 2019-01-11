@@ -1,15 +1,33 @@
+<!DOCTYPE html>
 <html>
+
+    <!--
+        Workbook 1 for CS559 - Index File -
+        written January 2019, by Michael Gleicher
+
+        students are allowed (and) encouraged to read the HTML source files!
+
+        (however, this one is boring - you can just look at it in the browser)
+    -->
+-->
 <header>
         <meta charset="UTF-8"> 
+        <!-- use the CS559 Style Sheet -->
+        <link rel="stylesheet" href="style559.css">
+        <title>
+            Assignment 01: Getting Started (Index Page)
+        </title>
 </header>
 
 <body>
-    <p>This is a title</p>
-    <canvas id="myCanvas" width="400px" height="200px" style="border:1px solid #000"></canvas>
+    <!-- 
+        the weird comments (with the @@) that follow
+        have to do with how we manage files for CS559 - don't worry about them
+
+        they will generally happen in boring parts of the HTML
+    -->
+    <!-- @@MDReplace: index01.md -->
+    <!-- @@EndMDReplace -->
 </body>
 
-<script type="module">
-    import * as mymodule from './mymodule.js';
-    window.onload = mymodule.test;
-</script>
 </html>
