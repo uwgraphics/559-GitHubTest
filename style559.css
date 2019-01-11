@@ -3,16 +3,7 @@
 /** overall, use sans-serif fonts since they look nicer */
 body {
     font-family: Calibri, Helvetica, sans-serif;
-}
-
-/** try to make things decently responsive - without using any magic! */
-:root{
-    --boxwidth:600px;
-}
-@media all and (maxwidth: 600px) {
-    :root{
-        --boxwidth:100%;
-    }
+    width:1000px;
 }
 
 /** put each example into a box */
